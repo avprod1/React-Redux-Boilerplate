@@ -1,15 +1,16 @@
-import {combineReducers} from 'redux';
-import UserReducer from './reducer-users';
-import ActiveUserReducer from './reducer-active-user';
 
-/*
- * We combine all reducers into a single object before updated data is dispatched (sent) to store
- * Your entire applications state (store) is just whatever gets returned from all your reducers
- * */
+
+import {combineReducers} from 'redux'
+import UserReducer from './reducer-users'
+import FlightReducer from './reducer-flights'
+import ActiveUserReducer from './reducer-active-user'
+import ActiveFlightReducer from './reducer-active-flight'
 
 const allReducers = combineReducers({
     users: UserReducer,
-    activeUser: ActiveUserReducer
+    flights: FlightReducer,
+    activeUser: ActiveUserReducer,
+    activeFlight: ActiveFlightReducer
 });
 
-export default allReducers
+export default allReducers;
